@@ -55,3 +55,43 @@ print ("")
 print ("--- Updated Status:--- ")
 print (f"Study Hours: {study_hours}")
 print (f"Stress Level: {stress_level}")
+print ("")
+
+
+
+#Step 3
+study_options = ["Programming", "Math", "English"]
+
+
+print ("--- Time to Study ---")
+print ("Choose a subject to study to focus on:")
+print ("Subjects", study_options)
+print ("")
+subject_choice = input ("What subject will you study? ")
+
+if subject_choice in study_options:
+    print (f"You chose to study {subject_choice}.")
+
+    if subject_choice == "Programming" and not stress_level < 80:
+        current_gpa += 0.2
+        social_points += 5
+        print ("You coded all week! GPA boosted, but your social life took a hit.")
+    elif subject_choice == "Math" or current_gpa < 2.5:
+        current_gpa += 0.1
+        social_points -= 15
+        print ("You solved so much math examples, GPA up !")
+    elif subject_choice == "English" and social_points < 60:
+        current_gpa += 0.1
+        social_points += 2
+        print ("You wrote an essay while learning how to balance your social life!")
+    else:
+        print ("You studided but nothing else happened, try again next week.")
+elif subject_choice not in study_options:
+    print ("That's not a valid subject. Skipped study week = no progress")
+
+current_gpa = round(current_gpa, 2)
+
+print ("")
+print ("--- Update Status ---")
+print (f"GPA: {current_gpa}")
+print (f"Social Points: {social_points}")
