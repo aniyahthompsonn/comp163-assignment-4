@@ -95,3 +95,42 @@ print ("")
 print ("--- Update Status ---")
 print (f"GPA: {current_gpa}")
 print (f"Social Points: {social_points}")
+
+
+
+# Step 4
+print ("")
+print ("--- Final Semester Assessment ---")
+
+if (current_gpa > 1.0) and (study_hours > 0):
+    print ("Evaluating your results...")
+    print ("")
+
+    honors_candidate = True if current_gpa >= 3.5 else False
+    if honors_candidate is True:
+        print ("Your eligible for honors recognition!")
+    elif honors_candidate is not True:
+        print ("You ar enot eligible for honors.")
+    if study_hours >= 50 and current_gpa >= 3.5:
+        ending = "Your hard work paid off! Congratulations!"
+        print ("")
+    elif stress_level >= 95 and current_gpa >= 3.0:
+        ending = "Your academics paid off but you ended up burnt out."
+    elif current_gpa < 2.0 and stress_level > 70:
+        ending: "Unfortunately, you're on academic probation."
+    elif social_points >= 80 and current_gpa < 2.0:
+        ending = "You didn't pass but at least you had fun"
+    else:
+        ending = "Semester completed. Lets try better next semester."
+else:
+    ending = "Cannot determine ending"
+
+print ("--- Final Results: ---")
+print (f"Name: {student_name}")
+print (f"GPA: {current_gpa}")
+print (f"Study Hours: {study_hours}")
+print (f"Social Points: {social_points}")
+print (f"Stress Level: {stress_level}")
+print ("")
+print ("--- Your Ending: ---")
+print (ending)
